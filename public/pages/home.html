@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Home</title>
+    <link rel="icon" href="/assets/logo.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="/assets/theme.css" />
+    <link rel="stylesheet" href="/assets/pages.css" />
+    <script>
+      if (window.parent === window) location.replace("/");
+    </script>
+  </head>
+  <body>
+    <canvas id="bg" aria-hidden="true"></canvas>
+
+    <main class="page home">
+      <h1 class="wordmark">
+        Ember<img class="spark" src="/assets/logo.svg" alt="" />
+      </h1>
+      <p class="tagline">keep the fire going</p>
+
+      <form class="search" id="search" autocomplete="off">
+        <svg class="icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7" /><path d="m20 20-3.5-3.5" /></svg>
+        <input id="q" type="text" placeholder="Search the web or type a URL..." aria-label="Search" spellcheck="false" />
+      </form>
+
+      <div class="shortcuts" id="shortcuts"></div>
+    </main>
+
+    <p class="foot"><kbd>Ctrl K</kbd> address bar &nbsp;·&nbsp; <kbd>Alt T</kbd> new tab &nbsp;·&nbsp; <kbd>Alt W</kbd> close tab</p>
+
+    <dialog id="add-dialog">
+      <form method="dialog" id="add-form">
+        <h2>Add shortcut</h2>
+        <label>Name<input class="field" id="add-name" required maxlength="24" placeholder="Wikipedia" /></label>
+        <label>URL<input class="field" id="add-url" required placeholder="wikipedia.org" /></label>
+        <div class="row">
+          <button class="button" value="cancel" formnovalidate>Cancel</button>
+          <button class="button primary" value="ok">Add</button>
+        </div>
+      </form>
+    </dialog>
+
+    <script src="/assets/common.js"></script>
+    <script src="/assets/bg.js"></script>
+    <script src="/assets/home.js"></script>
+  </body>
+</html>

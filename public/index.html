@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Ember</title>
+    <meta name="description" content="Ember is a web proxy with a full browser built in." />
+    <meta name="theme-color" content="#0e0909" />
+    <link rel="icon" href="/assets/logo.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="/assets/theme.css" />
+    <link rel="stylesheet" href="/assets/shell.css" />
+  </head>
+  <body>
+    <svg width="0" height="0" style="position: absolute" aria-hidden="true">
+      <symbol id="i-back" viewBox="0 0 24 24"><path d="M19 12H5M12 19l-7-7 7-7" /></symbol>
+      <symbol id="i-forward" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" /></symbol>
+      <symbol id="i-reload" viewBox="0 0 24 24"><path d="M21 12a9 9 0 1 1-2.64-6.36L21 8" /><path d="M21 3v5h-5" /></symbol>
+      <symbol id="i-home" viewBox="0 0 24 24"><path d="M3 10.5 12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z" /></symbol>
+      <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" /></symbol>
+      <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12" /></symbol>
+      <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7" /><path d="m20 20-3.5-3.5" /></symbol>
+      <symbol id="i-lock" viewBox="0 0 24 24"><rect x="4" y="11" width="16" height="10" rx="2" /><path d="M8 11V7a4 4 0 0 1 8 0v4" /></symbol>
+      <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" /><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18" /></symbol>
+      <symbol id="i-flame" viewBox="0 0 24 24"><path d="M12 2c.8 3.6-1.4 5.6-3.3 7.6C6.7 11.8 5 14 5 16.5A7 7 0 0 0 19 16.5c0-3-1.5-4.8-2.9-6.7-.2 1.7-1 2.9-2 3.3.6-4.1.1-8.6-2.1-11.1Z" /></symbol>
+      <symbol id="i-gamepad" viewBox="0 0 24 24"><path d="M6 11h4M8 9v4M15 12h.01M18 10h.01" /><path d="M17.3 5H6.7a4 4 0 0 0-3.96 3.43l-.7 4.9A3 3 0 0 0 7.2 15.6L9 14h6l1.8 1.6a3 3 0 0 0 5.16-2.27l-.7-4.9A4 4 0 0 0 17.3 5Z" /></symbol>
+      <symbol id="i-settings" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3" /><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1Z" /></symbol>
+      <symbol id="i-expand" viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" /></symbol>
+      <symbol id="i-shrink" viewBox="0 0 24 24"><path d="M4 14h6v6M20 10h-6V4M14 10l7-7M3 21l7-7" /></symbol>
+    </svg>
+
+    <div class="chrome">
+      <div class="tabbar">
+        <button class="brand" id="brand" title="Ember home" aria-label="Ember home">
+          <img src="/assets/logo.svg" alt="" width="20" height="20" />
+        </button>
+        <div class="tabs" id="tabs" role="tablist" aria-label="Tabs"></div>
+        <button class="btn newtab" id="newtab" title="New tab (Alt+T)" aria-label="New tab">
+          <svg class="icon"><use href="#i-plus" /></svg>
+        </button>
+      </div>
+
+      <div class="toolbar">
+        <div class="nav">
+          <button class="btn" id="back" title="Back" aria-label="Back"><svg class="icon"><use href="#i-back" /></svg></button>
+          <button class="btn" id="forward" title="Forward" aria-label="Forward"><svg class="icon"><use href="#i-forward" /></svg></button>
+          <button class="btn" id="reload" title="Reload (Ctrl+R)" aria-label="Reload"><svg class="icon"><use href="#i-reload" /></svg></button>
+          <button class="btn" id="home" title="Home" aria-label="Home"><svg class="icon"><use href="#i-home" /></svg></button>
+        </div>
+
+        <form class="omnibox" id="omnibox" autocomplete="off">
+          <svg class="icon omni-icon" id="omni-icon"><use href="#i-search" /></svg>
+          <input
+            id="address"
+            type="text"
+            spellcheck="false"
+            autocapitalize="off"
+            placeholder="Search or enter a URL"
+            aria-label="Address"
+            enterkeyhint="go"
+          />
+          <kbd class="hint">Ctrl K</kbd>
+        </form>
+
+        <div class="actions">
+          <button class="btn" id="games" title="Games" aria-label="Games"><svg class="icon"><use href="#i-gamepad" /></svg></button>
+          <button class="btn" id="settings" title="Settings" aria-label="Settings"><svg class="icon"><use href="#i-settings" /></svg></button>
+          <button class="btn" id="fullscreen" title="Fullscreen" aria-label="Fullscreen"><svg class="icon"><use href="#i-expand" /></svg></button>
+        </div>
+      </div>
+      <div class="progress" id="progress" aria-hidden="true"></div>
+    </div>
+
+    <main class="frames" id="frames"></main>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <template id="tab-template">
+      <div class="tab" role="tab" aria-selected="false" tabindex="0">
+        <img class="favicon" alt="" width="16" height="16" />
+        <span class="spinner" aria-hidden="true"></span>
+        <span class="title">New tab</span>
+        <button class="close" title="Close tab (Alt+W)" aria-label="Close tab">
+          <svg class="icon"><use href="#i-x" /></svg>
+        </button>
+      </div>
+    </template>
+
+    <script src="/baremux/index.js"></script>
+    <script src="/uv/uv.bundle.js"></script>
+    <script src="/uv/uv.config.js"></script>
+    <script src="/assets/common.js"></script>
+    <script src="/assets/shell.js"></script>
+  </body>
+</html>

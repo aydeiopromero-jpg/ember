@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Settings</title>
+    <link rel="icon" href="/assets/logo.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="/assets/theme.css" />
+    <link rel="stylesheet" href="/assets/pages.css" />
+    <script>
+      if (window.parent === window) location.replace("/");
+    </script>
+  </head>
+  <body>
+    <main class="page settings">
+      <header class="page-head">
+        <div>
+          <h1><span>Settings</span></h1>
+          <p>Changes save automatically.</p>
+        </div>
+      </header>
+
+      <section class="card">
+        <h2>Search engine</h2>
+        <p>Used when you type something that isn't a web address.</p>
+        <div class="chips" id="engines" style="margin: 0"></div>
+      </section>
+
+      <section class="card">
+        <div class="switch-row">
+          <div>
+            <h2>Animated background</h2>
+            <p>The drifting embers on the home page. Turn off on slow computers.</p>
+          </div>
+          <button class="switch" id="background" role="switch" aria-checked="true" aria-label="Animated background"></button>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="switch-row">
+          <div>
+            <h2>Open pop-ups in tabs</h2>
+            <p>Links that would open a new window open as an Ember tab instead.</p>
+          </div>
+          <button class="switch" id="popups" role="switch" aria-checked="true" aria-label="Open pop-ups in tabs"></button>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Wisp server</h2>
+        <p>The server that carries your traffic. Leave empty to use this site's own server.</p>
+        <form class="inline" id="wisp-form">
+          <input class="field" id="wisp" placeholder="wss://example.com/wisp/" spellcheck="false" />
+          <button class="button primary">Save</button>
+        </form>
+      </section>
+
+      <section class="card">
+        <h2>Keyboard shortcuts</h2>
+        <dl class="keys">
+          <dt><kbd>Ctrl K</kbd></dt><dd>Jump to the address bar</dd>
+          <dt><kbd>Ctrl R</kbd></dt><dd>Reload the current tab</dd>
+          <dt><kbd>Alt T</kbd></dt><dd>New tab</dd>
+          <dt><kbd>Alt W</kbd></dt><dd>Close tab</dd>
+          <dt><kbd>Alt 1–9</kbd></dt><dd>Switch to tab 1–9</dd>
+          <dt><kbd>Middle click</kbd></dt><dd>Open a shortcut or game in a new tab</dd>
+        </dl>
+      </section>
+
+      <section class="card">
+        <h2>Reset Ember</h2>
+        <p>Clears your settings and shortcuts and restarts the proxy.</p>
+        <button class="button danger" id="reset">Reset everything</button>
+      </section>
+    </main>
+
+    <script src="/assets/common.js"></script>
+    <script src="/assets/settings.js"></script>
+  </body>
+</html>

@@ -1,0 +1,28 @@
+{
+  "name": "ember",
+  "version": "1.0.0",
+  "description": "Ember - a web proxy with a browser-style UI",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "build:exe": "node exe/build.mjs"
+  },
+  "license": "AGPL-3.0-or-later",
+  "dependencies": {
+    "@fastify/static": "^10.1.10",
+    "@mercuryworkshop/bare-mux": "^2.1.9",
+    "@mercuryworkshop/epoxy-transport": "^2.1.29",
+    "@mercuryworkshop/wisp-js": "^0.5.3",
+    "@titaniumnetwork-dev/ultraviolet": "^3.2.10",
+    "fastify": "^5.12.8"
+  },
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "devDependencies": {
+    "esbuild": "^0.28.2",
+    "postject": "^1.0.0-alpha.6",
+    "resedit": "^3.1.0"
+  }
+}
